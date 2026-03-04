@@ -54,28 +54,28 @@ const Contact = () => {
             <div className="flex items-center gap-4 text-gray-700">
               <i className="bx bxs-envelope text-xl text-blue-600"></i>
               <a
-                href="mailto:mitalirasaniya@gmail.com"
+                href="mailto:imran30599@gmail.com"
                 className="hover:underline"
               >
-                mitalirasaniya@gmail.com
+                imran30599@gmail.com
               </a>
             </div>
 
             <div className="flex items-center gap-4 text-gray-700">
               <i className="bx bxs-phone-call text-xl text-blue-600"></i>
               <a
-                href="https://wa.me/123456789"
+                href="https://wa.me/7783037329"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:underline"
               >
-                +91-1234567890
+                +91-7783037329
               </a>
             </div>
 
             <div className="flex items-center gap-4 text-gray-700">
               <i className="bx bx-current-location text-xl text-blue-600"></i>
-              <span>Indore, Bharat</span>
+              <span>Bhopal, Madhya Pradesh</span>
             </div>
           </div>
         </div>
