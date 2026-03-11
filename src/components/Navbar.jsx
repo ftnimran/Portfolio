@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logoIcon from "../assets/image/icon_01.png";
-import Resume from "../assets/resume/imran.pdf";
+// import Resume from "../assets/resume/imran.pdf";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -11,7 +11,7 @@ const Navbar = () => {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-    { name: "Resume", href: Resume, target: "_blank" },
+    // { name: "Resume", href: Resume, target: "_blank" },
   ];
 
   return (

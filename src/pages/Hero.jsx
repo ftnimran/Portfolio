@@ -81,7 +81,7 @@ const Hero = () => {
           />
         </div>
 
-        <PillButtons btnText="More About Me" url="#about" />
+        <PillButtons btnText="Contact Me" url="#contact" />
       </div>
 
       {/* Right Image */}

@@ -2,6 +2,7 @@ import React from "react";
 import backGround2 from "../assets/image/background_image02.png";
 import SectionTitle from "../components/SectionTitle";
 import PillButtons from "../components/PillButtons.jsx";
+import Resume from "../assets/resume/imran.pdf";
 
 const About = () => {
   return (
@@ -41,7 +42,7 @@ const About = () => {
           </p>
 
           <div className="mt-3 md:mt-4.5">
-            <PillButtons btnText="More About Me" url="#about" />
+            <PillButtons btnText="Resume" url={Resume} target="_blank" />
           </div>
         </div>
       </div>
