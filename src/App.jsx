@@ -6,6 +6,7 @@ import Projects from "./pages/Projects.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTopButton from "./components/ScrollToTopButton.jsx";
+import InstallPWA from "./components/InstallPWA.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Contact />
       <Footer />
       <ScrollToTopButton />
+      <InstallPWA />
     </>
   );
 }

@@ -1,110 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SectionTitle from "../components/SectionTitle";
-import portfolioImg from "../assets/image/projects_img/portfolio.png";
-import socialMediaImg from "../assets/image/projects_img/socialMedia.png";
-import gitHubProfileFinderImg from "../assets/image/projects_img/gitHubProfileFinder.png";
-import simpleCalculatorImg from "../assets/image/projects_img/simpleCalculator.png";
-import shayariClubImg from "../assets/image/projects_img/shayariClub.png";
-
-const projects = [
-  {
-    title: "My Portfolio",
-    description: "Modern and fully responsive personal portfolio website built with React.js to showcase my projects, skills, and experience.",
-    liveLink: "https://portfolio05.qzz.io",
-    githubLink: "https://github.com/ftnimran/Portfolio",
-    tags: ["React", "Tailwindcss", "CSS"],
-    image: portfolioImg, 
-  },
-  {
-    title: "Social Media Link",
-    description: "Single platform website to showcase and share all your social media links easily.",
-    liveLink: "https://ftnlinks.qzz.io",
-    githubLink: "https://github.com/ftnimran/Social-Media-Links",
-    tags: ["Html", "Css", "JavaScript"],
-    image: socialMediaImg,
-  },
-  {
-    title: "GitHub Profile Finder",
-    description: "Simple app fetches GitHub profiles using real-time API instantly online.",
-    liveLink: "https://github-profile-finder-505.netlify.app",
-    githubLink: "https://github.com/ftnimran/GitHub-Profile-Finder",
-    tags: ["Html", "Css", "JavaScript", "REST API"],
-    image: gitHubProfileFinderImg,
-  },
-  {
-    title: "Simple Calculator",
-    description: "Simple web calculator built with HTML, CSS, JavaScript for basic arithmetic operations.",
-    liveLink: "https://simple-calculator-505.netlify.app",
-    githubLink: "https://github.com/ftnimran/Simple-Calculator",
-    tags: ["Html", "Css", "JavaScript"],
-    image: simpleCalculatorImg,
-  },
-  {
-    title: "Shayari Club",
-    description: "Simple shayari website offering Love, Sad, Bewafa, Birthday, and Attitude poetry categories.",
-    liveLink: "https://shayari-club-505.netlify.app",
-    githubLink: "https://github.com/ftnimran/Shayari-Club",
-    tags: ["Html", "Css"],
-    image: shayariClubImg,
-  }
-];
+import { projectsData } from "../data/ProjectsData";
 
 const ProjectCard = ({ project }) => (
-  <div className="group relative flex flex-col overflow-hidden rounded-[20px] border border-[rgba(255,255,255,0.1)] bg-linear-to-br from-[rgba(99,102,241,0.1)] to-[rgba(236,72,153,0.05)] transition-all duration-[0.4s] ease-in-out hover:-translate-y-3.75 hover:border-[#00eeff] hover:shadow-[0_30px_60px_rgba(0,238,255,0.25)]">
-
-    {/* Project Image Section */}
-    <div className="relative h-55 w-full overflow-hidden">
-
-      {/* Overlay for better text contrast on hover */}
-      <div className="absolute inset-0 z-10 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-      <img
-        src={project.image}
-        alt={project.title}
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-      />
+  <div className="group flex flex-col overflow-hidden rounded-[20px] border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.03)] transition-all duration-500 hover:-translate-y-3 hover:border-[#0ef] hover:shadow-[0_30px_60px_rgba(0,238,255,0.25)]">
+    <div className="relative h-56 w-full overflow-hidden border-b border-white/5">
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#051129] to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
+      <img src={project.image} alt={project.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
     </div>
-
-    {/* Project Info Section */}
-    <div className="flex flex-1 flex-col p-4 md:p-8">
-      <h3 className="mb-[0.8rem] text-[1.4rem] font-extrabold text-white">
-        {project.title}
-      </h3>
-      <p className="mb-6 text-[0.95rem] leading-[1.6] text-gray-400">
-        {project.description}
-      </p>
-
-      {/* Tags */}
-      <div className="mb-8 flex flex-wrap gap-2">
+    
+    <div className="flex flex-1 flex-col p-6 z-20">
+      <h3 className="mb-3 text-[1.4rem] font-bold text-white group-hover:text-[#0ef] transition-colors">{project.title}</h3>
+      <p className="mb-6 text-[0.95rem] text-gray-400 flex-1 leading-relaxed">{project.description}</p>
+      
+      <div className="mb-6 flex flex-wrap gap-2">
         {project.tags.map((tag, idx) => (
-          <span
-            key={idx}
-            className="rounded-[20px] bg-[rgba(0,238,255,0.5)] hover:bg-[rgba(0,238,255,0.8)] px-3 py-1 text-[0.7rem] font-semibold text-[#081b29] uppercase tracking-wider border border-[rgba(99,102,241,0.2)] hover:shadow-[0_15px_30px_rgba(0,238,255,0.5)] hover:border-[#00eeff] transition-all duration-[0.4s] ease-in-out hover:-translate-y-1"
-          >
+          <span key={idx} className="rounded-full bg-[rgba(0,238,255,0.1)] border border-[#0ef] px-3 py-1 text-[11px] font-bold tracking-widest text-[#0ef] uppercase">
             {tag}
           </span>
         ))}
       </div>
-
-      {/* Action Buttons */}
-      <div className="mt-auto flex items-center gap-3">
-        <a
-          href={project.liveLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-[0.9rem] font-bold active:scale-95 shadow-lg bg-[rgba(0,238,255,0.8)] hover:bg-[rgba(0,238,255,1)]  text-[#081b29] tracking-wider border border-[rgba(99,102,241,0.2)] hover:shadow-[0_15px_30px_rgba(0,238,255,0.5)] hover:border-[#00eeff] transition-all duration-[0.4s] ease-in-out hover:-translate-y-1"
+      
+      {/* Restored Original Hover Effects for Buttons */}
+      <div className="mt-auto pt-5 border-t border-white/5 flex items-center gap-4">
+        <a 
+          href={project.liveLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-[0.9rem] font-bold active:scale-95 shadow-lg bg-[rgba(0,238,255,0.8)] text-[#081b29] tracking-wider border border-[rgba(99,102,241,0.2)] transition-all duration-[0.4s] ease-in-out hover:bg-[rgba(0,238,255,1)] hover:border-[#00eeff] hover:shadow-[0_15px_30px_rgba(0,238,255,0.5)] hover:-translate-y-1"
         >
-          <i className='bx bx-link-external text-[20px]'></i> Live
+          <i className='bx bx-link-external text-[20px]'></i> Live Demo
         </a>
-
-        <a
-          href={project.githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex h-12 w-12 items-center justify-center rounded-xl border  bg-[rgba(255,255,255,0.05)] text-[#0ef] border-[#0ef] hover:border-[rgba(99,102,241,0.2)] hover:bg-[#0ef] hover:text-[#081b29] shadow-md text-3xl tracking-wider  hover:shadow-[0_15px_30px_rgba(0,238,255,0.5)] transition-all duration-[0.4s] ease-in-out hover:-translate-y-1"
-          title="View Source"
+        <a 
+          href={project.githubLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex h-12 w-12 items-center justify-center rounded-xl border bg-[rgba(255,255,255,0.05)] text-[#0ef] border-[#0ef] shadow-md text-3xl tracking-wider transition-all duration-[0.4s] ease-in-out hover:border-[rgba(99,102,241,0.2)] hover:bg-[#0ef] hover:text-[#081b29] hover:shadow-[0_15px_30px_rgba(0,238,255,0.5)] hover:-translate-y-1"
         >
-          <i className='bx bxl-github' ></i>
+          <i className='bx bxl-github'></i>
         </a>
       </div>
     </div>
@@ -112,18 +45,39 @@ const ProjectCard = ({ project }) => (
 );
 
 const Projects = () => {
-  return (
-    <section
-      id="projects"
-      className="w-full min-h-screen pt-17.5 px-[5%] md:px-[10%] pb-0 *:leading-tight"
-    >
-      <SectionTitle titleText1="My" titleText2=" Projects" />
+  const [isMobile, setIsMobile] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
-      <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-10 mt-8 md:mt-20">
-        {projects.map((project, index) => (
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const initialVisibleCount = isMobile ? 3 : 6;
+  const visibleProjects = showAll ? projectsData : projectsData.slice(0, initialVisibleCount);
+
+  return (
+    <section id="projects" className="w-full min-h-screen pt-[70px] px-[5%] md:px-[10%] pb-10">
+      <SectionTitle titleText1="My" titleText2=" Projects" />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 md:mt-16">
+        {visibleProjects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
       </div>
+
+      {projectsData.length > initialVisibleCount && (
+        <div className="flex justify-center mt-12">
+          <button 
+            onClick={() => setShowAll(!showAll)}
+            className="px-10 py-3 rounded-full border-2 border-[#0ef] text-[#0ef] font-bold text-[16px] transition-all duration-300 active:scale-95 hover:bg-[#0ef] hover:text-[#081b29] hover:shadow-[0_0_20px_#0ef]"
+          >
+            {showAll ? "Show Less" : "Show More Projects"}
+          </button>
+        </div>
+      )}
     </section>
   );
 };
