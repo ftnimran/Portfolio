@@ -1,33 +1,60 @@
-import portfolioImg from "../assets/image/projects_img/portfolio.png";
-import socialMediaImg from "../assets/image/projects_img/socialMedia.png";
-import gitHubProfileFinderImg from "../assets/image/projects_img/gitHubProfileFinder.png";
-import simpleCalculatorImg from "../assets/image/projects_img/simpleCalculator.png";
-import shayariClubImg from "../assets/image/projects_img/shayariClub.png";
+import portfolio from "../assets/image/projects_img/portfolio.png";
+import socialMedia from "../assets/image/projects_img/socialMedia.png";
+import gitHubProfileFinder from "../assets/image/projects_img/gitHubProfileFinder.png";
+import simpleCalculator from "../assets/image/projects_img/simpleCalculator.png";
+import shayariClub from "../assets/image/projects_img/shayariClub.png";
+import libMaster from "../assets/image/projects_img/libMaster.png";
+import linkNest from "../assets/image/projects_img/linkNest.png";
+import atmManagementSystem from "../assets/image/projects_img/atmManagementSystem.png";
 
 export const projectsData = [
-  {
-    title: "My Portfolio",
-    description: "Modern and fully responsive personal portfolio website built with React.js to showcase my projects, skills, and experience.",
-    liveLink: "https://portfolio05.qzz.io",
-    githubLink: "https://github.com/ftnimran/Portfolio",
-    tags: ["React", "Tailwind", "CSS"],
-    image: portfolioImg, 
+   {
+    title: "LinkNest",
+    description: "Engineered a customizable profile hub to seamlessly consolidate and share personal links and digital resumes.",
+    liveLink: "https://linknest-732.vercel.app",
+    githubLink: "https://github.com/ftnimran/linknest",
+    tags: ["React.js", "Tailwind CSS", "Node.js", "MongoDB", "Express.js", "JWT Auth"],
+    image: linkNest,
   },
   {
-    title: "Social Media Link",
-    description: "Single platform website to showcase and share all your social media links easily.",
-    liveLink: "https://ftnlinks.qzz.io",
-    githubLink: "https://github.com/ftnimran/Social-Media-Links",
-    tags: ["HTML", "CSS", "JS"],
-    image: socialMediaImg,
+    title: "LibMaster",
+    description: "A comprehensive digital solution to streamline library administration, automate book transactions, and manage user records.",
+    liveLink: "https://libmaster-732.vercel.app",
+    githubLink: "https://github.com/ftnimran/library-management-system",
+    tags: ["React.js", "Tailwind CSS", "Node.js", "MongoDB", "Express.js", "Multer"],
+    image: libMaster,
+  },
+  {
+    title: "Portfolio",
+    description: "Designed a modern, responsive personal portfolio to effectively showcase technical skills, projects, and professional identity.",
+    liveLink: "https://portfolio05.qzz.io",
+    githubLink: "https://github.com/ftnimran/Portfolio",
+    tags: ["React.js", "Vite","Tailwind CSS", "JavaScript (ES6+)", "Responsive UI"],
+    image: portfolio, 
   },
   {
     title: "GitHub Profile Finder",
-    description: "Simple app fetches GitHub profiles using real-time API instantly online.",
-    liveLink: "https://github-profile-finder-505.netlify.app",
+    description: "Built an interactive frontend application utilizing the GitHub API for real-time user profile data retrieval.",
+    liveLink: "https://github-profile-finder-732.vercel.app",
     githubLink: "https://github.com/ftnimran/GitHub-Profile-Finder",
-    tags: ["JS", "REST API"],
-    image: gitHubProfileFinderImg,
+    tags: ["HTML5", "CSS3", "JavaScript (ES6+)", "REST APIs", "Fetch API"],
+    image: gitHubProfileFinder,
+  },
+  {
+    title: "ATM Management System",
+    description: "Developed an interactive React application simulating core ATM operations with secure state and transaction management.",
+    liveLink: "https://atm-732.vercel.app",
+    githubLink: "https://github.com/ftnimran/atm-management-system",
+    tags: ["React.js", "Vite", "JavaScript (ES6+)", "CSS3", "Context API"],
+    image: atmManagementSystem,
+  },
+  {
+    title: "Social Media Link",
+    description: "Built a responsive and clean digital hub connecting various social media platforms for online networking.",
+    liveLink: "https://social-media-links-732.vercel.app",
+    githubLink: "https://github.com/ftnimran/Social-Media-Links",
+    tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design",],
+    image: socialMedia,
   },
   {
     title: "Simple Calculator",
@@ -35,7 +62,7 @@ export const projectsData = [
     liveLink: "https://simple-calculator-505.netlify.app",
     githubLink: "https://github.com/ftnimran/Simple-Calculator",
     tags: ["HTML", "CSS", "JS"],
-    image: simpleCalculatorImg,
+    image: simpleCalculator,
   },
   {
     title: "Shayari Club",
@@ -43,6 +70,6 @@ export const projectsData = [
     liveLink: "https://shayari-club-505.netlify.app",
     githubLink: "https://github.com/ftnimran/Shayari-Club",
     tags: ["HTML", "CSS"],
-    image: shayariClubImg,
-  }
+    image: shayariClub,
+  },
 ];
